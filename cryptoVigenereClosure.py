@@ -48,7 +48,7 @@ def helloIsTheKeyToEncrypt(wordToCrypt, key="hello"):
         print("This is the crypted message >>>", cryptedWord)
     return encrypt()
         
-def helloIsTheKeyToDecrypt(wordToDecrypt, key="salut"):
+def helloIsTheKeyToDecrypt(wordToDecrypt, key="hello"):
     #Function to decrypt
     def decrypt():
         #Create a list of the message to decrypt
