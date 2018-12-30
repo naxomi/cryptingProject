@@ -19,9 +19,9 @@ for loop in range(1, len(alphabet)):
 alphabet.append(alphabet[0])
 del alphabet[0]
 
-def helloIsTheKeyToEncrypt(wordToCrypt, key="hello"):
+def encryptionWithHello(key="hello"):
     #Fonction to encrypt
-    def encrypt():
+    def encrypt(wordToCrypt):
         #Create a list of the message to encrypt
         listWordToCrypt = [letter for index, letter in enumerate(wordToCrypt)]
         
@@ -46,11 +46,11 @@ def helloIsTheKeyToEncrypt(wordToCrypt, key="hello"):
         
         cryptedWord = "".join(listCryptedWord)
         print("This is the crypted message >>>", cryptedWord)
-    return encrypt()
+    return encrypt
         
-def helloIsTheKeyToDecrypt(wordToDecrypt, key="hello"):
+def decryptionWithHello(key="hello"):
     #Function to decrypt
-    def decrypt():
+    def decrypt(wordToDecrypt):
         #Create a list of the message to decrypt
         listWordToDecrypt = [letter for index, letter in enumerate(wordToDecrypt)]
            
@@ -76,11 +76,12 @@ def helloIsTheKeyToDecrypt(wordToDecrypt, key="hello"):
         #Create the decrypted message from the list
         wordDecrypted = "".join(listWordDecrypted)
         print("This is the decrypted message >>> ", wordDecrypted)
-    return decrypt()
+    return decrypt
 
-
-reponse = str(input("Would you like to encrypt or decrypt : (e/d)\n"))  
-if reponse == "e":      
-    helloIsTheKeyToEncrypt(str(input("Enter your message to encrypt : \n")))
-elif reponse == "d":
-    helloIsTheKeyToDecrypt(str(input("Enter your message to decrypt : \n")))
+ask = str(input("Would you like to encrypt or decrypt (e/d) : "))  
+if ask == "e":
+    encryption1 = encryptionWithHello()
+    encryption1(str(input("Enter your message to encrypt : ")))
+elif ask == "d":
+    decryption1 = decryptionWithHello()
+    decryption1(str(input("Enter your message to decrypt : ")))
